@@ -94,6 +94,7 @@ public class ViewHolder
 	public ViewHolder setImageResource(int viewId, int drawableId)
 	{
 		ImageView view = getView(viewId);
+
 		view.setImageResource(drawableId);
 
 		return this;
