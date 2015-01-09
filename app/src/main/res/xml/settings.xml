@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="settings"
+    android:title="Settings">
+
+    <PreferenceCategory
+        android:key="basic"
+        android:title="Basic Setting">
+
+        <EditTextPreference
+            android:key="nickName"
+            android:title="Nick Name"
+            android:defaultValue="Robot" />
+        <CheckBoxPreference
+            android:key="nightMode"
+            android:title="Night Mode"
+            android:summaryOn="ON"
+            android:summaryOff="OFF" />
+        <ListPreference
+            android:key="textSize"
+            android:title="Text Size"
+            android:dialogTitle="Text Size"
+            android:entries="@array/textSize_entry"
+            android:entryValues="@array/textSize_value"
+            android:defaultValue="0" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="clean"
+        android:title="Clean All">
+
+        <Preference android:key="cleanHistory"
+            android:title="Clean History" />
+
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Launch Preferences">
+        <PreferenceScreen android:key="screen_preference"
+            android:summary="Show another preference"
+            android:title="Another Preference">
+            <CheckBoxPreference android:key="next_screen_checkbox_prefs"
+                android:title="Check Box Setting"
+                android:summary="check box summary"/>
+        </PreferenceScreen>
+        <PreferenceScreen android:title="Intent Prefs"
+            android:summary="Start from intent">
+            <intent android:action="android.intent.action.VIEW"
+                android:data="http://www.baidu.com"/>
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+</PreferenceScreen>

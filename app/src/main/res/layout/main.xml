@@ -1,0 +1,117 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context=".HttpActivity"
+    android:orientation="vertical"
+    android:background="@drawable/welcome_bg_unfocused">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin">
+
+            <!--<Button-->
+                <!--android:id="@+id/btn"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Click Me"/>-->
+
+            <!--<Button-->
+                <!--android:id="@+id/orderedBroadcast"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Ordered Broadcast"/>-->
+
+            <!--<Button-->
+                <!--android:id="@+id/sqlite"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Sqlite"/>-->
+
+            <!--<Button-->
+                <!--android:id="@+id/sqlite2"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Sqlite2"/>-->
+
+            <!--<Button-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Start Service"-->
+                <!--android:onClick="startService"/>-->
+
+            <!--<Button-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Stop Service"-->
+                <!--android:onClick="stopService"/>-->
+
+            <!--<Button-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Bind Service"-->
+                <!--android:onClick="bind"/>-->
+
+            <!--<Button-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Unbind Service"-->
+                <!--android:onClick="unbind"/>-->
+
+            <!--<Button-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Send Broadcast"-->
+                <!--android:onClick="send"/>-->
+
+            <!--<Button-->
+                <!--android:id="@+id/smsActivity"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="SMSActivity"/>-->
+
+            <!--<Button-->
+                <!--android:id="@+id/handlerActivity"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="HandlerActivity"/>-->
+
+            <!--<Button-->
+                <!--android:id="@+id/asyncTask"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:text="AsyncTask Activity"/>-->
+
+            <!--<Button-->
+                <!--android:id="@+id/prefs"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:text="Prefs Activity"/>-->
+
+            <Button
+                android:id="@+id/notificationBtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Notification Activity"/>
+
+            <Button
+                android:id="@+id/viewPagerDemo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:onClick="onClick"
+                android:text="ViewPagerDemo"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Http</string>
+    <string name="hello_world">Hello</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_ordered_broadcast">OrderedBroadcast</string>
+    <string name="title_activity_sqlite">SqliteActivity</string>
+    <string name="title_activity_sqlite_activity2">SqliteActivity2</string>
+    <string name="title_activity_sms">SMSActivity</string>
+    <string name="title_activity_handler">HandlerActivity</string>
+    <string name="title_activity_list_view">ListViewActivity</string>
+    <string name="title_activity_async">AsyncActivity</string>
+    <string name="title_activity_prefs">PrefsActivity</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_notification_main">NotificationMain</string>
+    <string name="title_activity_view_pager_demo">ViewPagerDemo</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_right_top_popup">RightTopPopup</string>
+    <string name="title_activity_refresh_list_view">RefreshListView</string>
+    <string name="title_activity_baidu_push">BaiduPushActivity</string>
+    <string name="title_activity_old_adapter">OldAdapterActivity</string>
+
+</resources>
