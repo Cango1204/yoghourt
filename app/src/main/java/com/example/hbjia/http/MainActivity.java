@@ -23,6 +23,7 @@ import com.example.hbjia.asynctask.AsyncActivity;
 import com.example.hbjia.baiducloud.BaiduPushActivity;
 import com.example.hbjia.contentprovider.SMSActivity;
 import com.example.hbjia.dialog.RightTopPopup;
+import com.example.hbjia.fragment.ListTitleActivity;
 import com.example.hbjia.handler.HandlerActivity;
 import com.example.hbjia.listview.ListViewActivity;
 import com.example.hbjia.listview.RefreshListView;
@@ -206,7 +207,8 @@ public class MainActivity extends Activity {
 //                startSpecifiedActivity(RightTopPopup.class);
 //                startSpecifiedActivity(RefreshListView.class);
 //                startSpecifiedActivity(BaiduPushActivity.class);
-                startSpecifiedActivity(BaseAdapterActivity.class);
+//                startSpecifiedActivity(BaseAdapterActivity.class);
+                startSpecifiedActivity(ListTitleActivity.class);
         }
     }
 

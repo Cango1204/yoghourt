@@ -232,6 +232,26 @@
             android:name="com.example.zhy_baseadapterhelper.BaseAdapterActivity"
             android:label="BaseAdapterActivity" >
         </activity>
+        <activity
+            android:name="com.example.hbjia.fragment.ListTitleActivity"
+            android:label="@string/title_activity_list_title" >
+        </activity>
+        <activity
+            android:name="com.example.hbjia.fragment.ContentActivity"
+            android:label="@string/title_activity_content"
+            android:parentActivityName="android.support.v4.app.FragmentActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="android.support.v4.app.FragmentActivity" />
+        </activity>
+        <activity
+            android:name="com.example.hbjia.fragment.SingleFragmentActivity"
+            android:label="@string/title_activity_single_fragment"
+            android:parentActivityName="android.support.v4.app.FragmentActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="android.support.v4.app.FragmentActivity" />
+        </activity>
     </application>
 
 </manifest>

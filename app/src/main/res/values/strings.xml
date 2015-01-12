@@ -20,5 +20,8 @@
     <string name="title_activity_refresh_list_view">RefreshListView</string>
     <string name="title_activity_baidu_push">BaiduPushActivity</string>
     <string name="title_activity_old_adapter">OldAdapterActivity</string>
+    <string name="title_activity_list_title">ListTitleActivity</string>
+    <string name="title_activity_content">ContentActivity</string>
+    <string name="title_activity_single_fragment">SingleFragmentActivity</string>
 
 </resources>
