@@ -23,5 +23,6 @@
     <string name="title_activity_list_title">ListTitleActivity</string>
     <string name="title_activity_content">ContentActivity</string>
     <string name="title_activity_single_fragment">SingleFragmentActivity</string>
+    <string name="title_activity_dialog_framment_test">DialogFrammentTestActivity</string>
 
 </resources>

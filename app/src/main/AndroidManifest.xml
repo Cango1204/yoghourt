@@ -245,12 +245,8 @@
                 android:value="android.support.v4.app.FragmentActivity" />
         </activity>
         <activity
-            android:name="com.example.hbjia.fragment.SingleFragmentActivity"
-            android:label="@string/title_activity_single_fragment"
-            android:parentActivityName="android.support.v4.app.FragmentActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="android.support.v4.app.FragmentActivity" />
+            android:name="com.example.hbjia.dialogfragment.DialogFragmentTestActivity"
+            android:label="@string/title_activity_dialog_framment_test" >
         </activity>
     </application>
 
