@@ -248,6 +248,14 @@
             android:name="com.example.hbjia.dialogfragment.DialogFragmentTestActivity"
             android:label="@string/title_activity_dialog_framment_test" >
         </activity>
+        <activity
+            android:name="com.example.hbjia.layout.CustomLayoutActivity"
+            android:label="@string/title_activity_custom_layout" >
+        </activity>
+        <activity
+            android:name="com.example.hbjia.customview.CustomViewActivity"
+            android:label="@string/title_activity_custom_view" >
+        </activity>
     </application>
 
 </manifest>
