@@ -29,6 +29,15 @@ import me.maxwin.view.XListView;
 @SuppressLint("ValidFragment")
 public class MainFragment extends Fragment implements IXListViewRefreshListener, IXListViewLoadMore{
 
+    private static final int LOAD_MORE = 0x110;
+    private static final int LOAD_REFRESH = 0x111;
+    private static final int TIP_ERROR_NO_NETWORK = 0x112;
+    private static final int TIP_ERROR_SERVER = 0x113;
+
+    private boolean isFirstIn = true;
+    private boolean isConnNet = false;
+    private boolean isLoadingDataFromNetwork;
+
     //默认类型
     private int newsType = Constaint.NEWS_TYPE_YEJIE;
     //当前页
@@ -41,7 +50,6 @@ public class MainFragment extends Fragment implements IXListViewRefreshListener,
     private List<NewsItem> mDatas = new ArrayList<NewsItem>();
     //适配器
     private NewsItemAdapter mAdapter;
-
 
     public MainFragment(int newsType) {
         // Required empty public constructor
@@ -82,10 +90,10 @@ public class MainFragment extends Fragment implements IXListViewRefreshListener,
 
     }
 
-    class LoadDatasTask extends AsyncTask<Void, Void, Void>{
+    class LoadDatasTask extends AsyncTask<Integer, Void, Integer>{
 
         @Override
-        protected Void doInBackground(Void... voids) {
+        protected Integer doInBackground(Integer... voids) {
             try {
                 List<NewsItem> newsItems = mNewsItemBiz.getNewsItems(newsType, currentPage);
                 mDatas = newsItems;
@@ -96,7 +104,7 @@ public class MainFragment extends Fragment implements IXListViewRefreshListener,
         }
 
         @Override
-        protected void onPostExecute(Void aVoid) {
+        protected void onPostExecute(Integer aVoid) {
             mAdapter.addAll(mDatas);
             mAdapter.notifyDataSetChanged();
             mXlistView.stopRefresh();
