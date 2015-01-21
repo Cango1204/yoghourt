@@ -31,6 +31,7 @@ import com.example.hbjia.listview.ListViewActivity;
 import com.example.hbjia.listview.RefreshListView;
 import com.example.hbjia.notification.NotificationMain;
 import com.example.hbjia.pager.ViewPagerDemo;
+import com.example.hbjia.pager2.TraditionalViewPagerActivity;
 import com.example.hbjia.prefs.PrefsActivity;
 import com.example.hbjia.service.MyService;
 import com.example.hbjia.sqlite.SqliteActivity;
@@ -212,7 +213,8 @@ public class MainActivity extends Activity {
 //                startSpecifiedActivity(BaseAdapterActivity.class);
 //                startSpecifiedActivity(ListTitleActivity.class);
 //                startSpecifiedActivity(CustomLayoutActivity.class);
-                startSpecifiedActivity(CustomViewActivity.class);
+//                startSpecifiedActivity(CustomViewActivity.class);
+                startSpecifiedActivity(TraditionalViewPagerActivity.class);
         }
     }
 

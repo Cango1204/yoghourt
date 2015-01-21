@@ -256,6 +256,10 @@
             android:name="com.example.hbjia.customview.CustomViewActivity"
             android:label="@string/title_activity_custom_view" >
         </activity>
+        <activity
+            android:name="com.example.hbjia.pager2.TraditionalViewPagerActivity"
+            android:label="@string/title_activity_traditional_view_pager_acvitity" >
+        </activity>
     </application>
 
 </manifest>
