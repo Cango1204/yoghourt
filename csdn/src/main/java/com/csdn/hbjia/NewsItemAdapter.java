@@ -27,18 +27,23 @@ public class NewsItemAdapter extends BaseAdapter{
     private List<NewsItem> mDatas;
 
     //使用GitHub开源ImageLoader进行加载
-    private ImageLoader imageLoader = ImageLoader.getInstance();
+    private ImageLoader imageLoader;
     private DisplayImageOptions options;
 
     public NewsItemAdapter(Context context, List<NewsItem> list){
         this.mDatas = list;
         mInflator = LayoutInflater.from(context);
-
+        imageLoader = ImageLoader.getInstance();
         imageLoader.init(ImageLoaderConfiguration.createDefault(context));
         options = new DisplayImageOptions.Builder().showStubImage(R.drawable.images)
                 .showImageForEmptyUri(R.drawable.images).showImageOnFail(R.drawable.images)
                 .cacheInMemory().cacheOnDisc().displayer(new RoundedBitmapDisplayer(20))
                 .displayer(new FadeInBitmapDisplayer(300)).build();
+    }
+
+    public void setDatas(List<NewsItem> newsItems) {
+        this.mDatas.clear();
+        this.mDatas.addAll(newsItems);
     }
 
     public void addAll(List<NewsItem> mDatas) {

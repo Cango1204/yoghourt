@@ -10,6 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.csdn.hbjia.com.csdn.hbjia.util.AppUtil;
+import com.csdn.hbjia.com.csdn.hbjia.util.NetUtil;
+import com.csdn.hbjia.com.csdn.hbjia.util.ToastUtil;
+import com.csdn.hbjia.dao.NewsItemDao;
 import com.zhy.bean.CommonException;
 import com.zhy.bean.NewsItem;
 import com.zhy.biz.NewsItemBiz;
@@ -34,8 +38,15 @@ public class MainFragment extends Fragment implements IXListViewRefreshListener,
     private static final int TIP_ERROR_NO_NETWORK = 0x112;
     private static final int TIP_ERROR_SERVER = 0x113;
 
+    //是否是第一次进入
     private boolean isFirstIn = true;
+    /*
+    是否连接网络
+     */
     private boolean isConnNet = false;
+    /*
+    是否从网络加载数据
+     */
     private boolean isLoadingDataFromNetwork;
 
     //默认类型
@@ -44,6 +55,10 @@ public class MainFragment extends Fragment implements IXListViewRefreshListener,
     private int currentPage = 1;
     //新闻处理业务类
     private NewsItemBiz mNewsItemBiz;
+    /*
+    与数据库交互
+     */
+    private NewsItemDao mNewsItemDao;
     //扩展的ListView
     private XListView mXlistView;
     //数据源
@@ -52,7 +67,6 @@ public class MainFragment extends Fragment implements IXListViewRefreshListener,
     private NewsItemAdapter mAdapter;
 
     public MainFragment(int newsType) {
-        // Required empty public constructor
         this.newsType = newsType;
         mNewsItemBiz = new NewsItemBiz();
     }
@@ -62,52 +76,113 @@ public class MainFragment extends Fragment implements IXListViewRefreshListener,
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.tab_item_fragment_main, null);
-//        TextView textView = (TextView) view.findViewById(R.id.id_tip);
-//        textView.setText(TabAdapter.TITLES[this.newsType]);
         return view;
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        mNewsItemDao = new NewsItemDao(getActivity());
         mAdapter = new NewsItemAdapter(getActivity(), mDatas);
 
         mXlistView = (XListView) getView().findViewById(R.id.id_xlistview);
         mXlistView.setAdapter(mAdapter);
         mXlistView.setPullRefreshEnable(this);
         mXlistView.setPullLoadEnable(this);
+        mXlistView.setRefreshTime(AppUtil.getRefreashTime(getActivity(), newsType));
 
-        mXlistView.startRefresh();
+        if(isFirstIn) {
+            mXlistView.startRefresh();
+            isFirstIn = false;
+        } else {
+            mXlistView.NotRefreshAtBegin();
+        }
     }
 
     @Override
     public void onRefresh() {
-        new LoadDatasTask().execute();
+        new LoadDatasTask().execute(LOAD_REFRESH);
     }
 
     @Override
     public void onLoadMore() {
+        new LoadDatasTask().execute(LOAD_MORE);
+    }
 
+    public void loadMoreData() {
+        if(isLoadingDataFromNetwork) {
+            currentPage += 1;
+            try {
+                List<NewsItem> newsItems = mNewsItemBiz.getNewsItems(newsType, currentPage);
+                mNewsItemDao.add(newsItems);
+                mAdapter.addAll(newsItems);
+            } catch (CommonException e) {
+                e.printStackTrace();
+            }
+        } else {
+            currentPage += 1;
+            List<NewsItem> newsItems = mNewsItemDao.list(newsType, currentPage);
+            mAdapter.addAll(newsItems);
+        }
+    }
+
+    public Integer refreshData() {
+        if(NetUtil.checkNet(getActivity())) {
+            isConnNet = true;
+            try {
+                List<NewsItem> newsItems = mNewsItemBiz.getNewsItems(newsType, currentPage);
+                mAdapter.setDatas(newsItems);
+
+                isLoadingDataFromNetwork = true;
+                AppUtil.setRefreashTime(getActivity(), newsType);
+                mNewsItemDao.deleteAll(newsType);
+                mNewsItemDao.add(newsItems);
+            } catch (CommonException e) {
+                e.printStackTrace();
+                isLoadingDataFromNetwork = false;
+                return TIP_ERROR_SERVER;
+            }
+        } else {
+            isConnNet = false;
+            isLoadingDataFromNetwork = false;
+            List<NewsItem> newsItems = mNewsItemDao.list(newsType, currentPage);
+            mDatas = newsItems;
+            return TIP_ERROR_NO_NETWORK;
+        }
+        return -1;
     }
 
     class LoadDatasTask extends AsyncTask<Integer, Void, Integer>{
 
         @Override
         protected Integer doInBackground(Integer... voids) {
-            try {
-                List<NewsItem> newsItems = mNewsItemBiz.getNewsItems(newsType, currentPage);
-                mDatas = newsItems;
-            } catch (CommonException e) {
-                e.printStackTrace();
+            switch (voids[0]) {
+                case LOAD_MORE:
+                    loadMoreData();
+                    break;
+                case LOAD_REFRESH:
+                    return refreshData();
             }
-            return null;
+            return -1;
         }
 
         @Override
-        protected void onPostExecute(Integer aVoid) {
-            mAdapter.addAll(mDatas);
-            mAdapter.notifyDataSetChanged();
+        protected void onPostExecute(Integer result) {
+            switch (result) {
+                case TIP_ERROR_NO_NETWORK:
+                    ToastUtil.toast(getActivity(), "No network connection!");
+                    mAdapter.setDatas(mDatas);
+                    mAdapter.notifyDataSetChanged();
+                    break;
+                case TIP_ERROR_SERVER:
+                    ToastUtil.toast(getActivity(), "Server Error!");
+                    break;
+                default:
+                    break;
+            }
+            mXlistView.setRefreshTime(AppUtil.getRefreashTime(getActivity(), newsType));
             mXlistView.stopRefresh();
+            mXlistView.stopLoadMore();
         }
     }
 }

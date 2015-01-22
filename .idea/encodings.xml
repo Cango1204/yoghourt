@@ -2,6 +2,8 @@
 <project version="4">
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/CSDNSplider/src/com/zhy/csdn/DataUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/csdn/src/main/java/com/csdn/hbjia/com/csdn/hbjia/util/AppUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/csdn/src/main/java/com/csdn/hbjia/com/csdn/hbjia/util/NetUtil.java" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
