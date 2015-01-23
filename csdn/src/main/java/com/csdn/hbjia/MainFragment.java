@@ -2,12 +2,14 @@ package com.csdn.hbjia;
 
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import com.csdn.hbjia.com.csdn.hbjia.util.AppUtil;
@@ -90,6 +92,16 @@ public class MainFragment extends Fragment implements IXListViewRefreshListener,
         mXlistView.setPullRefreshEnable(this);
         mXlistView.setPullLoadEnable(this);
         mXlistView.setRefreshTime(AppUtil.getRefreashTime(getActivity(), newsType));
+
+        mXlistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                NewsItem newsItem = mDatas.get(position);
+                Intent intent = new Intent(getActivity(), NewsContentActivity.class);
+                intent.putExtra("url", newsItem.getLink());
+                startActivity(intent);
+            }
+        });
 
         if(isFirstIn) {
             mXlistView.startRefresh();

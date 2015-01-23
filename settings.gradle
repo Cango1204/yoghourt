@@ -1,3 +1,4 @@
 include ':app', ':csdn', ':XListView'
 include ':library'
 include ':imageloadlibrary'
+include ':gestureimageview'
