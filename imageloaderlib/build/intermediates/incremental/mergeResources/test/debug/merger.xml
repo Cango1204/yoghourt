@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="debug"><source path="E:\Projects\Hard\AllStar\imageloaderlib\build\intermediates\bundles\debug\res"/></dataSet><dataSet config="main"><source path="E:\Projects\Hard\AllStar\imageloaderlib\src\androidTest\res"/><source path="E:\Projects\Hard\AllStar\imageloaderlib\build\generated\res\rs\test\debug"/><source path="E:\Projects\Hard\AllStar\imageloaderlib\build\generated\res\generated\test\debug"/></dataSet><mergedItems/></merger>

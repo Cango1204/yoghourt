@@ -24,7 +24,7 @@ dependencies {
     compile 'com.android.support:support-v4:19.1.+'
     compile project(':library')
     compile project(':XListView')
-    compile project(':imageloadlibrary')
     compile files('libs/csdn_splider.jar')
     compile files('libs/jsoup-1.7.2.jar')
+    compile project(':imageloadlibrary')
 }

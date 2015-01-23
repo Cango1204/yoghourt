@@ -38,7 +38,6 @@ public class AppUtil
 	 */
 	public static void setRefreashTime(Context context, int newType)
 	{
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		PreferenceUtil.write(context, "NEWS_" + newType, getCurrentTime());
 	}
 

@@ -55,7 +55,7 @@ public class NewsItemDao {
                     " where newstype=? limit ?,?";
             SQLiteDatabase db = dbHelper.getWritableDatabase();
             Cursor c = db.rawQuery(sql, new String[]{newsType + "", offset + "", (offset + 10) + ""});
-            NewsItem newsItem = null;
+            NewsItem newsItem;
             while (c.moveToNext()) {
                 newsItem = new NewsItem();
 
