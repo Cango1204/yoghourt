@@ -1,11 +1,11 @@
-package com.example.hbjia.level2.com.example.hbjia.level2.asynctaskandprogress;
+package com.example.hbjia.level2.asynctaskandprogress;
 
 import android.app.Activity;
+import android.app.DialogFragment;
 import android.app.ListActivity;
 import android.content.res.Configuration;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.app.DialogFragment;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;

@@ -1,8 +1,8 @@
-package com.example.hbjia.level2.com.example.hbjia.level2.asynctaskandprogress;
+package com.example.hbjia.level2.asynctaskandprogress;
 
+import android.app.Fragment;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.app.Fragment;
 
 /**
  * Created by hbjia on 2015/1/26.

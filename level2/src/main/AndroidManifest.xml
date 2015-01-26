@@ -20,16 +20,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".com.example.hbjia.level2.asynctaskandprogress.SavedInstanceStateUsingActivity"
+            android:name=".asynctaskandprogress.SavedInstanceStateUsingActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_saved_instance_state_using" >
         </activity>
         <activity
-            android:name=".com.example.hbjia.level2.asynctaskandprogress.FragmentRetainDataActivity"
+            android:name=".asynctaskandprogress.FragmentRetainDataActivity"
             android:label="@string/title_activity_fragment_retain_data" >
         </activity>
         <activity
-            android:name=".com.example.hbjia.level2.asynctaskandprogress.FixProblemActivity"
+            android:name=".asynctaskandprogress.FixProblemActivity"
             android:label="@string/title_activity_fix_problem" >
         </activity>
     </application>

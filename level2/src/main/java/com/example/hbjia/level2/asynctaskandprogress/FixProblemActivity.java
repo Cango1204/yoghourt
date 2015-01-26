@@ -1,6 +1,5 @@
-package com.example.hbjia.level2.com.example.hbjia.level2.asynctaskandprogress;
+package com.example.hbjia.level2.asynctaskandprogress;
 
-import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.ListActivity;
 import android.os.Bundle;
@@ -12,7 +11,6 @@ import android.widget.ListAdapter;
 
 import com.example.hbjia.level2.R;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class FixProblemActivity extends ListActivity {

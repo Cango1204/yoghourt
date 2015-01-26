@@ -1,4 +1,4 @@
-package com.example.hbjia.level2.com.example.hbjia.level2.asynctaskandprogress;
+package com.example.hbjia.level2.asynctaskandprogress;
 
 import android.app.Activity;
 import android.app.DialogFragment;
