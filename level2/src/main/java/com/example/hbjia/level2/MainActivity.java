@@ -7,9 +7,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.hbjia.level2.com.example.hbjia.level2.asynctaskandprogress.FixProblemActivity;
-import com.example.hbjia.level2.com.example.hbjia.level2.asynctaskandprogress.FragmentRetainDataActivity;
-import com.example.hbjia.level2.com.example.hbjia.level2.asynctaskandprogress.SavedInstanceStateUsingActivity;
+import com.example.hbjia.level2.asynctaskandprogress.FixProblemActivity;
+import com.example.hbjia.level2.asynctaskandprogress.FragmentRetainDataActivity;
+import com.example.hbjia.level2.asynctaskandprogress.SavedInstanceStateUsingActivity;
 
 
 public class MainActivity extends Activity {
