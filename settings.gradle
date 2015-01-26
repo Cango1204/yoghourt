@@ -1,4 +1,4 @@
-include ':app', ':csdn', ':XListView'
+include ':app', ':csdn', ':XListView', ':level2'
 include ':library'
 include ':imageloadlibrary'
 include ':gestureimageview'
