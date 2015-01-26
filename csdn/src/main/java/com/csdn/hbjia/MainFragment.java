@@ -2,6 +2,7 @@ package com.csdn.hbjia;
 
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -56,7 +57,7 @@ public class MainFragment extends Fragment implements IXListViewRefreshListener,
     //当前页
     private int currentPage = 1;
     //新闻处理业务类
-    private NewsItemBiz mNewsItemBiz;
+    private static NewsItemBiz mNewsItemBiz;
     /*
     与数据库交互
      */
@@ -68,11 +69,19 @@ public class MainFragment extends Fragment implements IXListViewRefreshListener,
     //适配器
     private NewsItemAdapter mAdapter;
 
-    public MainFragment(int newsType) {
-        this.newsType = newsType;
-        mNewsItemBiz = new NewsItemBiz();
-    }
+    private Context context;
 
+//    public MainFragment(int newsType) {
+//        this.newsType = newsType;
+//        mNewsItemBiz = new NewsItemBiz();
+//    }
+
+    public static MainFragment getInstance(int newsType) {
+        MainFragment mainFragment = new MainFragment();
+        mainFragment.newsType = newsType;
+        mNewsItemBiz = new NewsItemBiz();
+        return mainFragment;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -84,6 +93,7 @@ public class MainFragment extends Fragment implements IXListViewRefreshListener,
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        context = this.getActivity();
         mNewsItemDao = new NewsItemDao(getActivity());
         mAdapter = new NewsItemAdapter(getActivity(), mDatas);
 
@@ -139,14 +149,14 @@ public class MainFragment extends Fragment implements IXListViewRefreshListener,
     }
 
     public Integer refreshData() {
-        if(NetUtil.checkNet(getActivity())) {
+        if(NetUtil.checkNet(context)) {
             isConnNet = true;
             try {
                 List<NewsItem> newsItems = mNewsItemBiz.getNewsItems(newsType, currentPage);
                 mAdapter.setDatas(newsItems);
 
                 isLoadingDataFromNetwork = true;
-                AppUtil.setRefreashTime(getActivity(), newsType);
+                AppUtil.setRefreashTime(context, newsType);
                 mNewsItemDao.deleteAll(newsType);
                 mNewsItemDao.add(newsItems);
             } catch (CommonException e) {
@@ -182,17 +192,17 @@ public class MainFragment extends Fragment implements IXListViewRefreshListener,
         protected void onPostExecute(Integer result) {
             switch (result) {
                 case TIP_ERROR_NO_NETWORK:
-                    ToastUtil.toast(getActivity(), "No network connection!");
+                    ToastUtil.toast(context, "No network connection!");
                     mAdapter.setDatas(mDatas);
                     mAdapter.notifyDataSetChanged();
                     break;
                 case TIP_ERROR_SERVER:
-                    ToastUtil.toast(getActivity(), "Server Error!");
+                    ToastUtil.toast(context, "Server Error!");
                     break;
                 default:
                     break;
             }
-            mXlistView.setRefreshTime(AppUtil.getRefreashTime(getActivity(), newsType));
+            mXlistView.setRefreshTime(AppUtil.getRefreashTime(context, newsType));
             mXlistView.stopRefresh();
             mXlistView.stopLoadMore();
         }

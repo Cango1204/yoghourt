@@ -52,7 +52,8 @@ public class NewsContentActivity extends Activity implements IXListViewLoadMore
 
 		mListView.setAdapter(mAdapter);
 		mListView.disablePullRefreash();
-		mListView.setPullLoadEnable(this);
+//		mListView.setPullLoadEnable(this);
+        mListView.disablePullLoad();
 		
 		mListView.setOnItemClickListener(new OnItemClickListener()
 		{

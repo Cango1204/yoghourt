@@ -17,7 +17,8 @@ public class TabAdapter extends FragmentPagerAdapter{
 
     @Override
     public Fragment getItem(int position) {
-        MainFragment fragment = new MainFragment(position + 1);
+//        MainFragment fragment = new MainFragment(position + 1);
+        MainFragment fragment = MainFragment.getInstance(position + 1);
         return fragment;
     }
 

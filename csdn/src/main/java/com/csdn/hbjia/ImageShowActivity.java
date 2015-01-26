@@ -55,10 +55,10 @@ public class ImageShowActivity extends Activity
 		mGestureImageView.setDrawingCacheEnabled(true);
 		if (FileUtil.writeSDcard(url, mGestureImageView.getDrawingCache()))
 		{
-			Toast.makeText(getApplicationContext(), "??????", Toast.LENGTH_SHORT).show();
+			Toast.makeText(getApplicationContext(), "Saved Successfully!", Toast.LENGTH_SHORT).show();
 		} else
 		{
-			Toast.makeText(getApplicationContext(), "???????", Toast.LENGTH_SHORT).show();
+			Toast.makeText(getApplicationContext(), "Saved Failed!", Toast.LENGTH_SHORT).show();
 		}
 		mGestureImageView.setDrawingCacheEnabled(false);
 	}
