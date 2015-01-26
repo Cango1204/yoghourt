@@ -10,6 +10,7 @@ import android.view.View;
 import com.example.hbjia.level2.asynctaskandprogress.FixProblemActivity;
 import com.example.hbjia.level2.asynctaskandprogress.FragmentRetainDataActivity;
 import com.example.hbjia.level2.asynctaskandprogress.SavedInstanceStateUsingActivity;
+import com.example.hbjia.level2.imageviewer.ImageViewActivity;
 
 
 public class MainActivity extends Activity {
@@ -32,6 +33,11 @@ public class MainActivity extends Activity {
 
     public void startFixProblemActivity(View v) {
         Intent intent = new Intent(this, FixProblemActivity.class);
+        startActivity(intent);
+    }
+
+    public void startImageViewActivity(View v) {
+        Intent intent = new Intent(this, ImageViewActivity.class);
         startActivity(intent);
     }
 

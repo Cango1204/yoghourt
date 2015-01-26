@@ -7,5 +7,6 @@
     <string name="title_activity_saved_instance_state_using">SavedInstanceStateUsingActivity</string>
     <string name="title_activity_fragment_retain_data">FragmentRetainDataActivity</string>
     <string name="title_activity_fix_problem">FixProblemActivity</string>
+    <string name="title_activity_image_view">ImageViewActivity</string>
 
 </resources>

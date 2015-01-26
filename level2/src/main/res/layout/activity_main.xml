@@ -19,9 +19,15 @@
         android:onClick="startFragmentRetainDataActivity" />
 
     <Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="FixProblemActivity"
+    android:onClick="startFixProblemActivity" />
+
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="FixProblemActivity"
-        android:onClick="startFixProblemActivity" />
+        android:text="ImageViewActivity"
+        android:onClick="startImageViewActivity" />
 
 </LinearLayout>
