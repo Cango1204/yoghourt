@@ -124,7 +124,7 @@ public class MainTabFriends extends Fragment implements PushMessageReceiver.onNe
 				String userId = mDatas.get(position).getUserId();
 				if (userId.equals(mSpUtils.getUserId()))
 				{
-					T.showShort(getActivity(), "���ܺ��Լ��������");
+					T.showShort(getActivity(), "不能和自己聊天哈！");
 					return;
 				}
 

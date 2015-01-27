@@ -16,7 +16,7 @@ public class NetUtil {
 //			L.i("��ǰ������ƣ�" + name);
 			isNetConnected = true;
 		} else {
-			L.i("û�п�������");
+			L.i("没有可用网络");
 			isNetConnected = false;
 		}
 		return isNetConnected;

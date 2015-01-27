@@ -48,7 +48,7 @@ public class LoginActivity extends FragmentActivity implements PushMessageReceiv
 			{
 				task.stop();
 			}
-			T.showShort(LoginActivity.this, "��¼��ʱ��������");
+			T.showShort(LoginActivity.this, "登录超时，请重试");
 		}
 	};
 
