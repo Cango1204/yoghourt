@@ -1,4 +1,5 @@
-include ':app', ':csdn', ':XListView', ':level2'
+include ':app', ':csdn', ':XListView', ':level2', ':weixin'
 include ':library'
 include ':imageloadlibrary'
 include ':gestureimageview'
+include ':badgeView'

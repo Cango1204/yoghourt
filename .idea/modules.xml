@@ -6,11 +6,13 @@
       <module fileurl="file://$PROJECT_DIR$/Http.iml" filepath="$PROJECT_DIR$/Http.iml" />
       <module fileurl="file://$PROJECT_DIR$/XListView/XListView.iml" filepath="$PROJECT_DIR$/XListView/XListView.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/badgeView/badgeView.iml" filepath="$PROJECT_DIR$/badgeView/badgeView.iml" />
       <module fileurl="file://$PROJECT_DIR$/csdn/csdn.iml" filepath="$PROJECT_DIR$/csdn/csdn.iml" />
       <module fileurl="file://$PROJECT_DIR$/gestureimageview/gestureimageview.iml" filepath="$PROJECT_DIR$/gestureimageview/gestureimageview.iml" />
       <module fileurl="file://$PROJECT_DIR$/imageloadlibrary/imageloadlibrary.iml" filepath="$PROJECT_DIR$/imageloadlibrary/imageloadlibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/level2/level2.iml" filepath="$PROJECT_DIR$/level2/level2.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/weixin/weixin.iml" filepath="$PROJECT_DIR$/weixin/weixin.iml" />
       <module fileurl="file://$PROJECT_DIR$/yoghourt.iml" filepath="$PROJECT_DIR$/yoghourt.iml" />
     </modules>
   </component>

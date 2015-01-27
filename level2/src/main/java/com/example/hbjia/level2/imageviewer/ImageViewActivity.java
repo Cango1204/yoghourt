@@ -100,7 +100,6 @@ public class ImageViewActivity extends Activity {
                     Log.e(TAG, path);
                     File parentFile = new File(path).getParentFile();
                     String parentPath = parentFile.getAbsolutePath();
-                    Log.e(TAG, parentPath);
                     if(mDirPaths.contains(parentPath)) {
                         continue;
                     } else {
