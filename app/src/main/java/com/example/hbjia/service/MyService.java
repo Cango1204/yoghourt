@@ -33,6 +33,11 @@ public class MyService extends Service {
     public void onCreate() {
         super.onCreate();
         Log.i(this.getClass().getName(), "onCreate======");
+        try {
+            Thread.sleep(60000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
