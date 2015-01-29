@@ -37,6 +37,10 @@
             android:name=".imageviewer.ImageViewActivity"
             android:label="@string/title_activity_image_view" >
         </activity>
+        <activity
+            android:name=".customview.DeleteListActivity"
+            android:label="@string/title_activity_delete_list" >
+        </activity>
     </application>
 
 </manifest>

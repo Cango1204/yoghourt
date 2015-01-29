@@ -6,10 +6,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.hbjia.level2.asynctaskandprogress.FixProblemActivity;
 import com.example.hbjia.level2.asynctaskandprogress.FragmentRetainDataActivity;
 import com.example.hbjia.level2.asynctaskandprogress.SavedInstanceStateUsingActivity;
+import com.example.hbjia.level2.customview.DeleteListActivity;
+import com.example.hbjia.level2.customview.TitleView;
 import com.example.hbjia.level2.imageviewer.ImageViewActivity;
 
 
@@ -19,6 +22,15 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        TitleView titleView = (TitleView) findViewById(R.id.id_titleView);
+        titleView.setButtonText("返回");
+        titleView.setTitleText("微信");
+        titleView.setClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Title 被点击", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     public void startSavedInstanceStateUsingActivity(View v) {
@@ -38,6 +50,11 @@ public class MainActivity extends Activity {
 
     public void startImageViewActivity(View v) {
         Intent intent = new Intent(this, ImageViewActivity.class);
+        startActivity(intent);
+    }
+
+    public void startDeleteListActivity(View v) {
+        Intent intent = new Intent(this, DeleteListActivity.class);
         startActivity(intent);
     }
 

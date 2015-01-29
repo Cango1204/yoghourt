@@ -1,10 +1,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
     android:orientation="vertical">
+
+    <com.example.hbjia.level2.customview.TitleView
+        android:id="@+id/id_titleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f1aa04"/>
 
     <Button
         android:layout_width="match_parent"
@@ -19,15 +23,21 @@
         android:onClick="startFragmentRetainDataActivity" />
 
     <Button
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="FixProblemActivity"
-    android:onClick="startFixProblemActivity" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FixProblemActivity"
+        android:onClick="startFixProblemActivity" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ImageViewActivity"
         android:onClick="startImageViewActivity" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DeleteListActivity"
+        android:onClick="startDeleteListActivity" />
 
 </LinearLayout>
