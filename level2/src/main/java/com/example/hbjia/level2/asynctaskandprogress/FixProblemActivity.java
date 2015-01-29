@@ -2,12 +2,15 @@ package com.example.hbjia.level2.asynctaskandprogress;
 
 import android.app.FragmentManager;
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
+import android.widget.ListView;
 
 import com.example.hbjia.level2.R;
 
@@ -86,5 +89,12 @@ public class FixProblemActivity extends ListActivity {
         mDatas = mMyAsyncTask.getItems();
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mDatas);
         setListAdapter(mAdapter);
+    }
+
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+        Intent intent = new Intent(this, FragmentRetainDataActivity.class);
+        startActivity(intent);
     }
 }

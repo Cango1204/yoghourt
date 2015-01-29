@@ -1,6 +1,43 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+    <item
+        android:id="@+id/action_add"
+        android:icon="@android:drawable/ic_menu_search"
+        android:actionViewClass="android.widget.SearchView"
+        android:showAsAction="ifRoom|collapseActionView"
+        android:title="Add"/>
+    <item
+        android:id="@+id/action_delete"
+        android:icon="@android:drawable/ic_menu_delete"
+        android:showAsAction="always"
+        android:title="Delete"/>
+
+    <item android:id="@+id/action_custom_provider"
+        android:icon="@drawable/notify_general"
+        android:actionProviderClass="com.example.hbjia.level2.actionbar.CustomActionProvider"
+        android:showAsAction="always"
+        android:title="QQ" />
+
+    <item
+        android:id="@+id/action_share"
+        android:actionProviderClass="android.widget.ShareActionProvider"
+        android:showAsAction="ifRoom"
+        android:title="Share"/>
+
+    <item
+        android:id="@+id/action_compass"
+        android:icon="@android:drawable/ic_menu_compass"
+        android:showAsAction="never"
+        android:title="Compass"/>
+
+    <item
+        android:id="@+id/action_edit"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:showAsAction="never"
+        android:title="Edit"/>
+
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100"/>
+        android:icon="@android:drawable/ic_menu_send"
+        android:orderInCategory="100" android:showAsAction="never"/>
 </menu>

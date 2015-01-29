@@ -3,9 +3,13 @@ package com.example.hbjia.level2;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewConfiguration;
+import android.view.Window;
+import android.widget.ShareActionProvider;
 import android.widget.Toast;
 
 import com.example.hbjia.level2.asynctaskandprogress.FixProblemActivity;
@@ -15,13 +19,19 @@ import com.example.hbjia.level2.customview.DeleteListActivity;
 import com.example.hbjia.level2.customview.TitleView;
 import com.example.hbjia.level2.imageviewer.ImageViewActivity;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
 
 public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         TitleView titleView = (TitleView) findViewById(R.id.id_titleView);
         titleView.setButtonText("返回");
         titleView.setTitleText("微信");
@@ -31,6 +41,7 @@ public class MainActivity extends Activity {
                 Toast.makeText(MainActivity.this, "Title 被点击", Toast.LENGTH_LONG).show();
             }
         });
+//        forceShowOverflowMenu();
     }
 
     public void startSavedInstanceStateUsingActivity(View v) {
@@ -58,11 +69,41 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 
+    private void forceShowOverflowMenu() {
+        try {
+            ViewConfiguration config = ViewConfiguration.get(this);
+            Field menuKeyField = ViewConfiguration.class
+                    .getDeclaredField("sHasPermanentMenuKey");
+            if (menuKeyField != null) {
+                menuKeyField.setAccessible(true);
+                menuKeyField.setBoolean(config, false);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
+        Log.e("TAG", "Max memory is " + maxMemory + "KB");
+        super.onResume();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+        MenuItem menuItem = menu.findItem(R.id.action_share);
+        ShareActionProvider shareActionProvider = (ShareActionProvider) menuItem.getActionProvider();
+        shareActionProvider.setShareIntent(getDefaultIntent());
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    private Intent getDefaultIntent() {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("image/*");
+        return intent;
     }
 
     @Override
@@ -71,12 +112,32 @@ public class MainActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (id) {
+            case R.id.action_add :
+                Toast.makeText(this, "Add pressed", Toast.LENGTH_SHORT).show();
+                break;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onMenuOpened(int featureId, Menu menu) {
+        if(menu != null) {
+            if(menu.getClass().getSimpleName().equals("MenuBuilder")) {
+                try {
+                    Method method = menu.getClass().getDeclaredMethod("setOptionalIconsVisible", Boolean.TYPE);
+                    method.setAccessible(true);
+                    method.invoke(menu, true);
+                } catch (NoSuchMethodException e) {
+                    e.printStackTrace();
+                } catch (InvocationTargetException e) {
+                    e.printStackTrace();
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return super.onMenuOpened(featureId, menu);
     }
 }

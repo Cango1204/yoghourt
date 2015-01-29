@@ -1,11 +1,15 @@
 package com.example.hbjia.level2.customview;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.hbjia.level2.R;
+import com.example.hbjia.level2.actionbar.AlbumFragment;
+import com.example.hbjia.level2.actionbar.ArtistFragment;
+import com.example.hbjia.level2.actionbar.TabListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,6 +25,13 @@ public class DeleteListActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete_list);
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+        ActionBar.Tab tab = actionBar.newTab().setText("Artist").setTabListener(new TabListener<ArtistFragment>(this, "artist", ArtistFragment.class));
+        actionBar.addTab(tab);
+        tab = actionBar.newTab().setText("Album").setTabListener(new TabListener<AlbumFragment>(this, "album", AlbumFragment.class));
+        actionBar.addTab(tab);
         initData();
     }
 
@@ -65,7 +76,8 @@ public class DeleteListActivity extends Activity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == android.R.id.home) {
+            finish();
             return true;
         }
 
