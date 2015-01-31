@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.hbjia.level2.asynctaskandprogress.FixProblemActivity;
 import com.example.hbjia.level2.asynctaskandprogress.FragmentRetainDataActivity;
 import com.example.hbjia.level2.asynctaskandprogress.SavedInstanceStateUsingActivity;
+import com.example.hbjia.level2.crash.CrashMainActivity;
 import com.example.hbjia.level2.customview.DeleteListActivity;
 import com.example.hbjia.level2.customview.TitleView;
 import com.example.hbjia.level2.imageviewer.ImageViewActivity;
@@ -26,11 +27,20 @@ import java.lang.reflect.Method;
 
 public class MainActivity extends Activity {
 
+    private String mStr;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                boolean result = mStr.equals("FUCK");
+            }
+        }).start();
 
         TitleView titleView = (TitleView) findViewById(R.id.id_titleView);
         titleView.setButtonText("返回");
@@ -66,6 +76,11 @@ public class MainActivity extends Activity {
 
     public void startDeleteListActivity(View v) {
         Intent intent = new Intent(this, DeleteListActivity.class);
+        startActivity(intent);
+    }
+
+    public void startCrashMainActivity(View v) {
+        Intent intent = new Intent(this, CrashMainActivity.class);
         startActivity(intent);
     }
 

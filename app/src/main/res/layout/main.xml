@@ -110,6 +110,13 @@
                 android:onClick="onClick"
                 android:text="ViewPagerDemo"/>
 
+            <Button
+                android:id="@+id/webViewBtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="WebView Activity"
+                android:onClick="onClick"/>
+
             <com.example.hbjia.customview.CounterView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
