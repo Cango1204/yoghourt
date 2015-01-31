@@ -12,6 +12,7 @@ import android.view.Window;
 import android.widget.ShareActionProvider;
 import android.widget.Toast;
 
+import com.example.hbjia.level2.appinfo.AppInfoActivity;
 import com.example.hbjia.level2.asynctaskandprogress.FixProblemActivity;
 import com.example.hbjia.level2.asynctaskandprogress.FragmentRetainDataActivity;
 import com.example.hbjia.level2.asynctaskandprogress.SavedInstanceStateUsingActivity;
@@ -35,12 +36,12 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                boolean result = mStr.equals("FUCK");
-            }
-        }).start();
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                boolean result = mStr.equals("FUCK");
+//            }
+//        }).start();
 
         TitleView titleView = (TitleView) findViewById(R.id.id_titleView);
         titleView.setButtonText("返回");
@@ -81,6 +82,11 @@ public class MainActivity extends Activity {
 
     public void startCrashMainActivity(View v) {
         Intent intent = new Intent(this, CrashMainActivity.class);
+        startActivity(intent);
+    }
+
+    public void startAppInfoActivity(View v) {
+        Intent intent = new Intent(this, AppInfoActivity.class);
         startActivity(intent);
     }
 

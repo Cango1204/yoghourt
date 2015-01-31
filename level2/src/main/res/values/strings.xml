@@ -10,5 +10,7 @@
     <string name="title_activity_image_view">ImageViewActivity</string>
     <string name="title_activity_delete_list">DeleteListActivity</string>
     <string name="title_activity_crash_main">CrashMainActivity</string>
+    <string name="title_activity_app_info">AppInfoActivity</string>
+    <string name="title_activity_window_manager_demo">WindowManagerDemoActivity</string>
 
 </resources>
