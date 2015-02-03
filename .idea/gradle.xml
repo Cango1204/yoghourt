@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/XListView" />
+            <option value="$PROJECT_DIR$/androidpnclient" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/badgeView" />
             <option value="$PROJECT_DIR$/csdn" />
@@ -17,7 +18,9 @@
             <option value="$PROJECT_DIR$/imageloadlibrary" />
             <option value="$PROJECT_DIR$/level2" />
             <option value="$PROJECT_DIR$/library" />
+            <option value="$PROJECT_DIR$/qqEmojilib" />
             <option value="$PROJECT_DIR$/weixin" />
+            <option value="$PROJECT_DIR$/xMPP" />
           </set>
         </option>
       </GradleProjectSettings>
