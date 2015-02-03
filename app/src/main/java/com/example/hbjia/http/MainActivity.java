@@ -36,6 +36,7 @@ import com.example.hbjia.prefs.PrefsActivity;
 import com.example.hbjia.service.MyService;
 import com.example.hbjia.sqlite.SqliteActivity;
 import com.example.hbjia.sqlite.SqliteActivity2;
+import com.example.hbjia.webview.WebViewActivity;
 import com.example.zhy_baseadapterhelper.BaseAdapterActivity;
 
 import org.apache.http.HttpResponse;
@@ -215,6 +216,10 @@ public class MainActivity extends Activity {
 //                startSpecifiedActivity(CustomLayoutActivity.class);
 //                startSpecifiedActivity(CustomViewActivity.class);
                 startSpecifiedActivity(TraditionalViewPagerActivity.class);
+                break;
+            case R.id.webViewBtn:
+                startSpecifiedActivity(WebViewActivity.class);
+                break;
         }
     }
 

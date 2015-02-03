@@ -260,6 +260,10 @@
             android:name="com.example.hbjia.pager2.TraditionalViewPagerActivity"
             android:label="@string/title_activity_traditional_view_pager_acvitity" >
         </activity>
+        <activity
+            android:name="com.example.hbjia.webview.WebViewActivity"
+            android:label="@string/title_activity_web_view" >
+        </activity>
     </application>
 
 </manifest>
