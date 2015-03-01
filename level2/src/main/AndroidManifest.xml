@@ -2,11 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hbjia.level2" >
 
+    <permission android:name="com.hbjia.receiver.permission" android:protectionLevel="normal" />
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="com.hbjia.receiver.permission" />
 
     <application
         android:name=".windowmanager.FloatApplication"
@@ -54,6 +57,31 @@
             android:name=".appinfo.AppInfoActivity"
             android:label="@string/title_activity_app_info" >
         </activity>
+        <activity
+            android:name=".thread.MultiThreadActivity"
+            android:label="@string/title_activity_multi_thread" >
+        </activity>
+        <activity
+            android:name=".thread.MyRunnableActivity"
+            android:label="@string/title_activity_my_runnable" >
+            <intent-filter>
+                <action android:name="com.hbjia.myrunnable" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <receiver android:name=".receiver.FirstReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="com.hbjia.receiver" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.SecondReceiver">
+            <intent-filter android:priority="999">
+                <action android:name="com.hbjia.receiver" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".service.FirstService" />
+        <service android:name=".service.MyIntentService" />
     </application>
 
 </manifest>
