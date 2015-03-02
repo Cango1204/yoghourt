@@ -14,6 +14,8 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
 import android.os.Message;
+import android.os.Messenger;
+import android.os.RemoteException;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -31,6 +33,7 @@ import com.example.hbjia.level2.crash.CrashMainActivity;
 import com.example.hbjia.level2.customview.DeleteListActivity;
 import com.example.hbjia.level2.customview.TitleView;
 import com.example.hbjia.level2.handler.HandlerThread;
+import com.example.hbjia.level2.handler.SubThread;
 import com.example.hbjia.level2.imageviewer.ImageViewActivity;
 import com.example.hbjia.level2.receiver.FirstReceiver;
 import com.example.hbjia.level2.service.FirstService;
@@ -48,8 +51,7 @@ public class MainActivity extends Activity {
     private String mStr;
     private BroadcastReceiver firstReceiver;
     private TitleView titleView;
-    private Handler subHandler;
-    private Looper subThreadLooper;
+    private SubThread subThread;
 
     private Handler handler = new Handler(){
         @Override
@@ -102,9 +104,10 @@ public class MainActivity extends Activity {
 //                        }
 //                    }
 //                }.start();
-                Intent toIntent = new Intent(context, MyIntentService.class);
-                toIntent.putExtra("name", intent.getStringExtra("data"));
-                startService(toIntent);
+//                Intent toIntent = new Intent(context, MyIntentService.class);
+//                toIntent.putExtra("name", intent.getStringExtra("data"));
+//                startService(toIntent);
+                titleView.setButtonText(intent.getStringExtra("data"));
             }
         };
         IntentFilter intentFilter = new IntentFilter();
@@ -119,6 +122,8 @@ public class MainActivity extends Activity {
 //        alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 5000, pendingIntent);
 //        alarmManager.set(AlarmManager.RTC, System.currentTimeMillis() + 5000, pendingIntent);
 //        alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, 8000, pendingIntent);
+        subThread = new SubThread(this.handler);
+        subThread.start();
     }
 
     public void startSavedInstanceStateUsingActivity(View v) {
@@ -188,12 +193,14 @@ public class MainActivity extends Activity {
     }
 
     private boolean isBinded = false;
+    private Messenger mainMessager;
 
     private ServiceConnection serviceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             isBinded = true;
-            ((FirstService.MyBinder)iBinder).callMyName();
+//            ((FirstService.MyBinder)iBinder).callMyName();
+            mainMessager = new Messenger(iBinder);
         }
 
         @Override
@@ -236,25 +243,33 @@ public class MainActivity extends Activity {
 //                }.start();
 //                new Thread(new HandlerThread(this.handler)).start();
 //                new Thread(new HandlerThread(this.handler)).start();
-                new Thread(){
-                    @Override
-                    public void run() {
-                        Looper.prepare(); //创建消息队列
-                        subThreadLooper = Looper.myLooper();
-                        subHandler = new Handler(subThreadLooper){
-                            @Override
-                            public void handleMessage(Message msg) {
-                                titleView.setButtonText("搞么");
-                            }
-                        };
-                        Looper.loop(); //进入消息循环
-                    }
-                }.start();
+//                new Thread(){
+//                    @Override
+//                    public void run() {
+//                        Looper.prepare(); //创建消息队列
+//                        subThreadLooper = Looper.myLooper();
+//                        subHandler = new Handler(subThreadLooper){
+//                            @Override
+//                            public void handleMessage(Message msg) {
+//                                titleView.setButtonText("搞么");
+//                            }
+//                        };
+//                        Looper.loop(); //进入消息循环
+//                    }
+//                }.start();
+                subThread.getHandler().sendEmptyMessage(10);
                 break;
             }
             case R.id.id_subhandler: {
 
-                subHandler.sendEmptyMessage(1);
+//                subHandler.sendEmptyMessage(1);
+                Message message = Message.obtain(null, 121);
+                try {
+                    message.replyTo = new Messenger(handler);
+                    mainMessager.send(message);
+                } catch (RemoteException e) {
+                    e.printStackTrace();
+                }
                 break;
             }
         }
