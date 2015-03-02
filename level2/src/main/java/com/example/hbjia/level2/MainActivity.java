@@ -20,6 +20,7 @@ import com.example.hbjia.level2.crash.CrashMainActivity;
 import com.example.hbjia.level2.customview.DeleteListActivity;
 import com.example.hbjia.level2.customview.TitleView;
 import com.example.hbjia.level2.imageviewer.ImageViewActivity;
+import com.example.hbjia.level2.surfaceview.ViewTest;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -87,6 +88,11 @@ public class MainActivity extends Activity {
 
     public void startAppInfoActivity(View v) {
         Intent intent = new Intent(this, AppInfoActivity.class);
+        startActivity(intent);
+    }
+
+    public void startViewTest(View v) {
+        Intent intent = new Intent(this, ViewTest.class);
         startActivity(intent);
     }
 

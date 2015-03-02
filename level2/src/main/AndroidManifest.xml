@@ -54,6 +54,10 @@
             android:name=".appinfo.AppInfoActivity"
             android:label="@string/title_activity_app_info" >
         </activity>
+        <activity
+            android:name=".surfaceview.ViewTest"
+            android:label="@string/title_activity_view_test" >
+        </activity>
     </application>
 
 </manifest>

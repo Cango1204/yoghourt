@@ -52,4 +52,10 @@
         android:text="AppInfoActivity"
         android:onClick="startAppInfoActivity" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ViewTest"
+        android:onClick="startViewTest" />
+
 </LinearLayout>
