@@ -47,11 +47,16 @@ import org.apache.http.client.methods.HttpGet;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Collection;
+import java.util.Set;
 
 
 public class MainActivity extends Activity {
 
     private MyService.MyBinder myBinder;
+
+    private Set set;
+    private Collection collection;
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {

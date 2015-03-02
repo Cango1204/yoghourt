@@ -1,61 +1,128 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <com.example.hbjia.level2.customview.TitleView
-        android:id="@+id/id_titleView"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#f1aa04"/>
+        android:layout_height="wrap_content">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="SavedInstanceStateUsingActivity"
-        android:onClick="startSavedInstanceStateUsingActivity" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="FragmentRetainDataActivity"
-        android:onClick="startFragmentRetainDataActivity" />
+            <com.example.hbjia.level2.customview.TitleView
+                android:id="@+id/id_titleView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#f1aa04"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="FixProblemActivity"
-        android:onClick="startFixProblemActivity" />
+            <!--<Button-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="SavedInstanceStateUsingActivity"-->
+                <!--android:onClick="startSavedInstanceStateUsingActivity" />-->
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ImageViewActivity"
-        android:onClick="startImageViewActivity" />
+            <!--<Button-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="FragmentRetainDataActivity"-->
+                <!--android:onClick="startFragmentRetainDataActivity" />-->
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="DeleteListActivity"
-        android:onClick="startDeleteListActivity" />
+            <!--<Button-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="FixProblemActivity"-->
+                <!--android:onClick="startFixProblemActivity" />-->
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="CrashMainActivity"
-        android:onClick="startCrashMainActivity" />
+            <!--<Button-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="ImageViewActivity"-->
+                <!--android:onClick="startImageViewActivity" />-->
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="AppInfoActivity"
-        android:onClick="startAppInfoActivity" />
+            <!--<Button-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="DeleteListActivity"-->
+                <!--android:onClick="startDeleteListActivity" />-->
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ViewTest"
-        android:onClick="startViewTest" />
+            <!--<Button-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="CrashMainActivity"-->
+                <!--android:onClick="startCrashMainActivity" />-->
 
-</LinearLayout>
+            <!--<Button-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="AppInfoActivity"-->
+                <!--android:onClick="startAppInfoActivity" />-->
+
+            <!--<Button-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="MultiThreadActivity"-->
+                <!--android:onClick="startMultiThreadActivity" />-->
+
+            <!--<Button-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="CustomMultiThreadActivity"-->
+                <!--android:onClick="startCustomMultiThreadActivity" />-->
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Send Broadcast"
+                android:onClick="sendBroadCastToFirst"/>
+
+            <Button
+                android:id="@+id/id_first_service_start"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="Start First Service"/>
+
+            <Button
+                android:id="@+id/id_first_service_stop"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="Stop First Service"/>
+
+            <Button
+                android:id="@+id/id_bind_first_service"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="Bind First Service"/>
+
+            <Button
+                android:id="@+id/id_unbind_first_service"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="UnBind First Service"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/id_handler"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Send Post Handler"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/id_subhandler"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Send Msg To Subhandler"
+                android:onClick="onClick"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
