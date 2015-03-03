@@ -2,9 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hbjia.level2" >
 
-    <uses-feature android:glEsVersion="0x00020000" android:required="true" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
 
-    <permission android:name="com.hbjia.receiver.permission" android:protectionLevel="normal" />
+    <permission
+        android:name="com.hbjia.receiver.permission"
+        android:protectionLevel="normal" />
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -73,19 +77,26 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <receiver android:name=".receiver.FirstReceiver">
-            <intent-filter android:priority="1000">
+
+        <receiver android:name=".receiver.FirstReceiver" >
+            <intent-filter android:priority="1000" >
                 <action android:name="com.hbjia.receiver" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".receiver.SecondReceiver">
-            <intent-filter android:priority="999">
+        <receiver android:name=".receiver.SecondReceiver" >
+            <intent-filter android:priority="999" >
                 <action android:name="com.hbjia.receiver" />
             </intent-filter>
         </receiver>
+
         <service android:name=".service.FirstService" />
         <service android:name=".service.MyIntentService" />
+
         <activity android:name=".opengl.OpenGLActivity" />
+        <activity
+            android:name=".socket.ChatClientActivity"
+            android:label="@string/title_activity_chat_client" >
+        </activity>
     </application>
 
 </manifest>

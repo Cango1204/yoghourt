@@ -1,0 +1,20 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hbjia.level2.socket.ChatClientActivity"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/id_msg_text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <Button
+        android:id="@+id/id_send"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        android:onClick="onClick"
+        android:layout_gravity="center"/>
+
+</LinearLayout>

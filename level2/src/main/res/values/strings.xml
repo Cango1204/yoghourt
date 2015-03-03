@@ -14,5 +14,6 @@
     <string name="title_activity_window_manager_demo">WindowManagerDemoActivity</string>
     <string name="title_activity_multi_thread">MultiThreadActivity</string>
     <string name="title_activity_my_runnable">MyRunnableActivity</string>
+    <string name="title_activity_chat_client">ChatClientActivity</string>
 
 </resources>

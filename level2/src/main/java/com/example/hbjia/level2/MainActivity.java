@@ -40,6 +40,7 @@ import com.example.hbjia.level2.opengl.OpenGLActivity;
 import com.example.hbjia.level2.receiver.FirstReceiver;
 import com.example.hbjia.level2.service.FirstService;
 import com.example.hbjia.level2.service.MyIntentService;
+import com.example.hbjia.level2.socket.ChatClientActivity;
 import com.example.hbjia.level2.thread.MultiThreadActivity;
 import com.example.hbjia.level2.thread.MyRunnableActivity;
 
@@ -278,6 +279,12 @@ public class MainActivity extends Activity {
             case R.id.id_opengl: {
                 Intent intent = new Intent(this, OpenGLActivity.class);
                 startActivity(intent);
+                break;
+            }
+            case R.id.id_socket: {
+                Intent intent = new Intent(this, ChatClientActivity.class);
+                startActivity(intent);
+                break;
             }
         }
     }
