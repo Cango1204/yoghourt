@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/E:/Projects/Hard/AllStar/mygame/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">My Game</string>
+    <string name="hello">Welcome!</string>
+</resources>

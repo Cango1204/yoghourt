@@ -15,6 +15,7 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.os.Message;
 import android.os.Messenger;
+import android.os.PowerManager;
 import android.os.RemoteException;
 import android.util.Log;
 import android.view.Menu;
@@ -35,6 +36,7 @@ import com.example.hbjia.level2.customview.TitleView;
 import com.example.hbjia.level2.handler.HandlerThread;
 import com.example.hbjia.level2.handler.SubThread;
 import com.example.hbjia.level2.imageviewer.ImageViewActivity;
+import com.example.hbjia.level2.opengl.OpenGLActivity;
 import com.example.hbjia.level2.receiver.FirstReceiver;
 import com.example.hbjia.level2.service.FirstService;
 import com.example.hbjia.level2.service.MyIntentService;
@@ -206,6 +208,7 @@ public class MainActivity extends Activity {
         @Override
         public void onServiceDisconnected(ComponentName componentName) {
             isBinded = false;
+            mainMessager = null;
         }
     };
 
@@ -272,6 +275,10 @@ public class MainActivity extends Activity {
                 }
                 break;
             }
+            case R.id.id_opengl: {
+                Intent intent = new Intent(this, OpenGLActivity.class);
+                startActivity(intent);
+            }
         }
     }
 
@@ -287,11 +294,18 @@ public class MainActivity extends Activity {
         }
     }
 
+    private void acquireWakeLock(){
+        PowerManager powerManager = (PowerManager) this.getSystemService(Context.POWER_SERVICE);
+        PowerManager.WakeLock wakeLock = powerManager.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP, "TAG");
+        wakeLock.acquire();
+    }
+
     @Override
     protected void onResume() {
-        int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
-        Log.e("TAG", "Max memory is " + maxMemory + "KB");
+//        int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
+//        Log.e("TAG", "Max memory is " + maxMemory + "KB");
         super.onResume();
+        acquireWakeLock();
     }
 
     @Override
