@@ -1,6 +1,7 @@
 package com.example.hbjia.level2.animation;
 
 import android.animation.Animator;
+import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
@@ -128,6 +129,45 @@ public class AnimationActivity2 extends Activity {
             }
         });
         animator.start();
+    }
+
+    public void togetherRun(View view) {
+        ObjectAnimator animator1 = ObjectAnimator.ofFloat(mBall, "scaleX",
+                1.0f, 2f);
+        ObjectAnimator animator2 = ObjectAnimator.ofFloat(mBall, "scaleY",
+                1.0f, 2.0f);
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.setDuration(2000);
+        animatorSet.setInterpolator(new LinearInterpolator());
+        animatorSet.playTogether(animator1, animator2);
+        animatorSet.start();
+    }
+
+    public void playWithAfter(View view) {
+        float cx = mBall.getX();
+
+        ObjectAnimator animator1 = ObjectAnimator.ofFloat(mBall, "scaleX",
+                1.0f, 2f);
+        ObjectAnimator animator2 = ObjectAnimator.ofFloat(mBall, "scaleY",
+                1.0f, 2.0f);
+        ObjectAnimator animator3 = ObjectAnimator.ofFloat(mBall, "x", cx, 0f);
+        ObjectAnimator animator4 = ObjectAnimator.ofFloat(mBall, "x", cx);
+
+        animator3.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator valueAnimator) {
+
+            }
+        });
+
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.play(animator1);
+        animatorSet.play(animator2);
+        animatorSet.play(animator3);
+        animatorSet.play(animator4);
+        animatorSet.setDuration(1000);
+        animatorSet.start();
+
     }
 
     @Override
