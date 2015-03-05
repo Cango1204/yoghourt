@@ -135,6 +135,13 @@
                 android:text="Chat"
                 android:onClick="onClick"/>
 
+            <Button
+                android:id="@+id/id_property_anim"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Property Animation"
+                android:onClick="onClick"/>
+
         </LinearLayout>
     </ScrollView>
 

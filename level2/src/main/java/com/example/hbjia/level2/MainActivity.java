@@ -26,6 +26,8 @@ import android.view.Window;
 import android.widget.ShareActionProvider;
 import android.widget.Toast;
 
+import com.example.hbjia.level2.animation.AnimationActivity1;
+import com.example.hbjia.level2.animation.AnimationActivity2;
 import com.example.hbjia.level2.appinfo.AppInfoActivity;
 import com.example.hbjia.level2.asynctaskandprogress.FixProblemActivity;
 import com.example.hbjia.level2.asynctaskandprogress.FragmentRetainDataActivity;
@@ -286,6 +288,13 @@ public class MainActivity extends Activity {
                 startActivity(intent);
                 break;
             }
+            case R.id.id_property_anim: {
+                Intent intent = new Intent(this, AnimationActivity2.class);
+                startActivity(intent);
+                break;
+            }
+            default:
+                break;
         }
     }
 
