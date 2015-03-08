@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.PointF;
 import android.graphics.Rect;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -40,6 +41,7 @@ public class AnimationActivity2 extends Activity {
         setContentView(R.layout.activity_animation_activity2);
 
         mBall = (ImageView) this.findViewById(R.id.id_ball);
+        mBall.setBackgroundResource(R.anim.logo_frame_animation);
 
         getWindowManager().getDefaultDisplay().getMetrics(dm);
         mScreenWidth = dm.widthPixels;
@@ -144,31 +146,41 @@ public class AnimationActivity2 extends Activity {
     }
 
     public void playWithAfter(View view) {
-        float cx = mBall.getX();
-
-        ObjectAnimator animator1 = ObjectAnimator.ofFloat(mBall, "scaleX",
-                1.0f, 2f);
-        ObjectAnimator animator2 = ObjectAnimator.ofFloat(mBall, "scaleY",
-                1.0f, 2.0f);
-        ObjectAnimator animator3 = ObjectAnimator.ofFloat(mBall, "x", cx, 0f);
-        ObjectAnimator animator4 = ObjectAnimator.ofFloat(mBall, "x", cx);
-
-        animator3.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+//        float cx = mBall.getX();
+//
+//        ObjectAnimator animator1 = ObjectAnimator.ofFloat(mBall, "scaleX",
+//                1.0f, 2f);
+//        ObjectAnimator animator2 = ObjectAnimator.ofFloat(mBall, "scaleY",
+//                1.0f, 2.0f);
+//        ObjectAnimator animator3 = ObjectAnimator.ofFloat(mBall, "x", cx, 0f);
+//        ObjectAnimator animator4 = ObjectAnimator.ofFloat(mBall, "x", cx);
+//
+//        animator3.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+//            @Override
+//            public void onAnimationUpdate(ValueAnimator valueAnimator) {
+//                mBall.invalidate();
+//            }
+//        });
+//
+//        AnimatorSet animatorSet = new AnimatorSet();
+//        animatorSet.play(animator1).with(animator2);
+//        animatorSet.play(animator2).with(animator3);
+//        animatorSet.play(animator4).after(animator3);
+//        animatorSet.setDuration(1000);
+//        animatorSet.start();
+        final AnimationDrawable animationDrawable = (AnimationDrawable) mBall.getBackground();
+        mBall.post(new Runnable() {
             @Override
-            public void onAnimationUpdate(ValueAnimator valueAnimator) {
-
+            public void run() {
+                if(animationDrawable.isRunning()) {
+                    animationDrawable.stop();
+                }
+                animationDrawable.start();
             }
         });
-
-        AnimatorSet animatorSet = new AnimatorSet();
-        animatorSet.play(animator1);
-        animatorSet.play(animator2);
-        animatorSet.play(animator3);
-        animatorSet.play(animator4);
-        animatorSet.setDuration(1000);
-        animatorSet.start();
-
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

@@ -25,13 +25,13 @@ public class DeleteListActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete_list);
-        ActionBar actionBar = getActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-        ActionBar.Tab tab = actionBar.newTab().setText("Artist").setTabListener(new TabListener<ArtistFragment>(this, "artist", ArtistFragment.class));
-        actionBar.addTab(tab);
-        tab = actionBar.newTab().setText("Album").setTabListener(new TabListener<AlbumFragment>(this, "album", AlbumFragment.class));
-        actionBar.addTab(tab);
+//        ActionBar actionBar = getActionBar();
+//        actionBar.setDisplayHomeAsUpEnabled(true);
+//        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+//        ActionBar.Tab tab = actionBar.newTab().setText("Artist").setTabListener(new TabListener<ArtistFragment>(this, "artist", ArtistFragment.class));
+//        actionBar.addTab(tab);
+//        tab = actionBar.newTab().setText("Album").setTabListener(new TabListener<AlbumFragment>(this, "album", AlbumFragment.class));
+//        actionBar.addTab(tab);
         initData();
     }
 
@@ -59,6 +59,14 @@ public class DeleteListActivity extends Activity {
         mDatas.add("Item 6");
         mDatas.add("Item 7");
         mDatas.add("Item 8");
+        mDatas.add("Item 9");
+        mDatas.add("Item 10");
+        mDatas.add("Item 11");
+        mDatas.add("Item 12");
+        mDatas.add("Item 13");
+        mDatas.add("Item 14");
+        mDatas.add("Item 15");
+        mDatas.add("Item 16");
     }
 
     @Override

@@ -1,26 +1,27 @@
-package com.example.hbjia.customview;
+package com.example.hbjia.level2.event;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 
-import com.example.hbjia.http.R;
+import com.example.hbjia.level2.R;
 
-public class CustomViewActivity extends Activity {
+public class EventTestActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.custom_view);
-//        setContentView(R.layout.custom_imageview);
+        setContentView(R.layout.activity_event_test);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_custom_view, menu);
+        getMenuInflater().inflate(R.menu.menu_event_test, menu);
         return true;
     }
 
@@ -37,5 +38,17 @@ public class CustomViewActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        Log.i(this.getClass().getName(), "Activity === dispatchTouchEvent");
+        return super.dispatchTouchEvent(ev);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        Log.i(this.getClass().getName(), "Activity === onTouchEvent");
+        return super.onTouchEvent(event);
     }
 }

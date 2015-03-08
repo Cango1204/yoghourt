@@ -43,11 +43,11 @@
                 <!--android:text="ImageViewActivity"-->
                 <!--android:onClick="startImageViewActivity" />-->
 
-            <!--<Button-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="DeleteListActivity"-->
-                <!--android:onClick="startDeleteListActivity" />-->
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DeleteListActivity"
+                android:onClick="startDeleteListActivity" />
 
             <!--<Button-->
                 <!--android:layout_width="match_parent"-->
@@ -140,6 +140,13 @@
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:text="Property Animation"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/id_event_activity"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Event Test"
                 android:onClick="onClick"/>
 
         </LinearLayout>

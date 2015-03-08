@@ -105,6 +105,10 @@
             android:name=".animation.AnimationActivity2"
             android:label="@string/title_activity_animation_activity2" >
         </activity>
+        <activity
+            android:name=".event.EventTestActivity"
+            android:label="@string/title_activity_event_test" >
+        </activity>
     </application>
 
 </manifest>

@@ -219,8 +219,8 @@ public class MainActivity extends Activity {
 //                startSpecifiedActivity(BaseAdapterActivity.class);
 //                startSpecifiedActivity(ListTitleActivity.class);
 //                startSpecifiedActivity(CustomLayoutActivity.class);
-//                startSpecifiedActivity(CustomViewActivity.class);
-                startSpecifiedActivity(TraditionalViewPagerActivity.class);
+                startSpecifiedActivity(CustomViewActivity.class);
+//                startSpecifiedActivity(TraditionalViewPagerActivity.class);
                 break;
             case R.id.webViewBtn:
                 startSpecifiedActivity(WebViewActivity.class);

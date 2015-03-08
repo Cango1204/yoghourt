@@ -2,6 +2,7 @@ package com.example.hbjia.level2.customview;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -36,6 +37,7 @@ public class DeleteListView extends ListView implements View.OnTouchListener, Ge
 
     @Override
     public boolean onDown(MotionEvent event) {
+        Log.i(this.getClass().getName(), "GestureDetector --- onDown");
         if(!isDeleteShown) {
             selectedItem = pointToPosition((int)event.getX(), (int)event.getY());
         }
@@ -54,6 +56,7 @@ public class DeleteListView extends ListView implements View.OnTouchListener, Ge
 
     @Override
     public boolean onScroll(MotionEvent event, MotionEvent event2, float v, float v2) {
+        Log.i(this.getClass().getName(), "onScroll --- v = " + v + ", v2 = " + v2);
         return false;
     }
 
@@ -64,6 +67,7 @@ public class DeleteListView extends ListView implements View.OnTouchListener, Ge
 
     @Override
     public boolean onFling(MotionEvent event, MotionEvent event2, float velocityX, float velocityY) {
+        Log.i(this.getClass().getName(), "onFling --- velocityX = " + velocityX + ", velocityY = " + velocityY);
         if(!isDeleteShown && Math.abs(velocityX) > Math.abs(velocityY)) {
             deleteButton = LayoutInflater.from(getContext()).inflate(R.layout.delete_button, null);
             deleteButton.setOnClickListener(new OnClickListener() {
@@ -75,6 +79,7 @@ public class DeleteListView extends ListView implements View.OnTouchListener, Ge
                     listener.onDelete(selectedItem);
                 }
             });
+            Log.i(this.getClass().getName(), "onFling --- selectedItem = " + selectedItem + ", getFirstVisiblePosition = " + getFirstVisiblePosition());
             itemLayout = (ViewGroup) getChildAt(selectedItem - getFirstVisiblePosition());
             RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -88,6 +93,7 @@ public class DeleteListView extends ListView implements View.OnTouchListener, Ge
 
     @Override
     public boolean onTouch(View view, MotionEvent event) {
+        Log.i(this.getClass().getName(), "OnTouchListener --- onTouch");
         if(isDeleteShown) {
             itemLayout.removeView(deleteButton);
             deleteButton = null;

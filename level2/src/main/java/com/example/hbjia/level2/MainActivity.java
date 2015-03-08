@@ -35,6 +35,7 @@ import com.example.hbjia.level2.asynctaskandprogress.SavedInstanceStateUsingActi
 import com.example.hbjia.level2.crash.CrashMainActivity;
 import com.example.hbjia.level2.customview.DeleteListActivity;
 import com.example.hbjia.level2.customview.TitleView;
+import com.example.hbjia.level2.event.EventTestActivity;
 import com.example.hbjia.level2.handler.HandlerThread;
 import com.example.hbjia.level2.handler.SubThread;
 import com.example.hbjia.level2.imageviewer.ImageViewActivity;
@@ -290,6 +291,11 @@ public class MainActivity extends Activity {
             }
             case R.id.id_property_anim: {
                 Intent intent = new Intent(this, AnimationActivity2.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.id_event_activity: {
+                Intent intent = new Intent(this, EventTestActivity.class);
                 startActivity(intent);
                 break;
             }

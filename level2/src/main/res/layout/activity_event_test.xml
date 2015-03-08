@@ -1,0 +1,11 @@
+<com.example.hbjia.level2.event.EventView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hbjia.level2.event.EventTestActivity">
+
+    <com.example.hbjia.level2.event.EventButton
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Event Test"/>
+
+</com.example.hbjia.level2.event.EventView>

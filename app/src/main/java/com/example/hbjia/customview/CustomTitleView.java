@@ -79,7 +79,8 @@ public class CustomTitleView extends View {
             @Override
             public void onClick(View view) {
                 mTitleText = randomText();
-                postInvalidate();
+//                postInvalidate();
+                invalidate();
             }
         });
     }
