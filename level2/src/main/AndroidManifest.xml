@@ -109,6 +109,19 @@
             android:name=".event.EventTestActivity"
             android:label="@string/title_activity_event_test" >
         </activity>
+
+        <service android:name=".service.AIDLService" >
+            <intent-filter>
+                <action android:name="com.hbjia.aidl.service" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".memory.BitmapActivity"
+            android:label="@string/title_activity_bitmap" >
+        </activity>
     </application>
 
 </manifest>

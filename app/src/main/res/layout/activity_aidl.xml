@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hbjia.aidlclient.AIDLActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/id_aidl_ok"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:onClick="onClick"/>
+
+    <Button
+        android:id="@+id/id_aidl_cancel"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:onClick="onClick"/>
+
+    <Button
+        android:id="@+id/id_aidl_callback"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Callback"
+        android:onClick="onClick"/>
+
+</LinearLayout>

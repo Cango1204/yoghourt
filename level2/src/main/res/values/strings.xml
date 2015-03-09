@@ -18,5 +18,6 @@
     <string name="title_activity_animation_activity1">AnimationActivity1</string>
     <string name="title_activity_animation_activity2">AnimationActivity2</string>
     <string name="title_activity_event_test">EventTestActivity</string>
+    <string name="title_activity_bitmap">BitmapActivity</string>
 
 </resources>

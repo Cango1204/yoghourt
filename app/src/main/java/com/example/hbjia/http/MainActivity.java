@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.hbjia.adapter.OldAdapterActivity;
+import com.example.hbjia.aidlclient.AIDLActivity;
 import com.example.hbjia.asynctask.AsyncActivity;
 import com.example.hbjia.baiducloud.BaiduPushActivity;
 import com.example.hbjia.contentprovider.SMSActivity;
@@ -219,8 +220,9 @@ public class MainActivity extends Activity {
 //                startSpecifiedActivity(BaseAdapterActivity.class);
 //                startSpecifiedActivity(ListTitleActivity.class);
 //                startSpecifiedActivity(CustomLayoutActivity.class);
-                startSpecifiedActivity(CustomViewActivity.class);
+//                startSpecifiedActivity(CustomViewActivity.class);
 //                startSpecifiedActivity(TraditionalViewPagerActivity.class);
+                startSpecifiedActivity(AIDLActivity.class);
                 break;
             case R.id.webViewBtn:
                 startSpecifiedActivity(WebViewActivity.class);

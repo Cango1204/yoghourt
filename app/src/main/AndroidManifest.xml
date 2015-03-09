@@ -264,6 +264,10 @@
             android:name="com.example.hbjia.webview.WebViewActivity"
             android:label="@string/title_activity_web_view" >
         </activity>
+        <activity
+            android:name="com.example.hbjia.aidlclient.AIDLActivity"
+            android:label="@string/title_activity_aidl" >
+        </activity>
     </application>
 
 </manifest>

@@ -39,6 +39,7 @@ import com.example.hbjia.level2.event.EventTestActivity;
 import com.example.hbjia.level2.handler.HandlerThread;
 import com.example.hbjia.level2.handler.SubThread;
 import com.example.hbjia.level2.imageviewer.ImageViewActivity;
+import com.example.hbjia.level2.memory.BitmapActivity;
 import com.example.hbjia.level2.opengl.OpenGLActivity;
 import com.example.hbjia.level2.receiver.FirstReceiver;
 import com.example.hbjia.level2.service.FirstService;
@@ -295,7 +296,9 @@ public class MainActivity extends Activity {
                 break;
             }
             case R.id.id_event_activity: {
-                Intent intent = new Intent(this, EventTestActivity.class);
+//                Intent intent = new Intent(this, EventTestActivity.class);
+//                startActivity(intent);
+                Intent intent = new Intent(this, BitmapActivity.class);
                 startActivity(intent);
                 break;
             }

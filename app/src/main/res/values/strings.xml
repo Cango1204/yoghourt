@@ -28,5 +28,6 @@
     <string name="title_activity_custom_view">CustomViewActivity</string>
     <string name="title_activity_traditional_view_pager_acvitity">TraditionalViewPagerAcvitity</string>
     <string name="title_activity_web_view">WebViewActivity</string>
+    <string name="title_activity_aidl">AIDLActivity</string>
 
 </resources>
