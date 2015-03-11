@@ -122,6 +122,10 @@
             android:name=".memory.BitmapActivity"
             android:label="@string/title_activity_bitmap" >
         </activity>
+        <activity
+            android:name=".media.MediaPlayerActivity"
+            android:label="@string/title_activity_media_player" >
+        </activity>
     </application>
 
 </manifest>
