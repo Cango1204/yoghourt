@@ -122,39 +122,46 @@
                 android:onClick="onClick"/>
 
             <Button
-                android:id="@+id/id_opengl"
+                android:id="@+id/id_photoViewer"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:text="Open GL"
+                android:text="Photo Viewer"
                 android:onClick="onClick"/>
 
-            <Button
-                android:id="@+id/id_socket"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:text="Chat"
-                android:onClick="onClick"/>
+            <!--<Button-->
+                <!--android:id="@+id/id_opengl"-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Open GL"-->
+                <!--android:onClick="onClick"/>-->
 
-            <Button
-                android:id="@+id/id_property_anim"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:text="Property Animation"
-                android:onClick="onClick"/>
+            <!--<Button-->
+                <!--android:id="@+id/id_socket"-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Chat"-->
+                <!--android:onClick="onClick"/>-->
 
-            <Button
-                android:id="@+id/id_event_activity"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:text="Event Test"
-                android:onClick="onClick"/>
+            <!--<Button-->
+                <!--android:id="@+id/id_property_anim"-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Property Animation"-->
+                <!--android:onClick="onClick"/>-->
 
-            <Button
-                android:id="@+id/id_media_player"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:text="Media Player"
-                android:onClick="onClick"/>
+            <!--<Button-->
+                <!--android:id="@+id/id_event_activity"-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Event Test"-->
+                <!--android:onClick="onClick"/>-->
+
+            <!--<Button-->
+                <!--android:id="@+id/id_media_player"-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Media Player"-->
+                <!--android:onClick="onClick"/>-->
 
         </LinearLayout>
     </ScrollView>

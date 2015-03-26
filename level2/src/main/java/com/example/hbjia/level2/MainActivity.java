@@ -49,6 +49,7 @@ import com.example.hbjia.level2.service.MyIntentService;
 import com.example.hbjia.level2.socket.ChatClientActivity;
 import com.example.hbjia.level2.thread.MultiThreadActivity;
 import com.example.hbjia.level2.thread.MyRunnableActivity;
+import com.example.hbjia.level2.ui.PhotoViewer;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -285,30 +286,32 @@ public class MainActivity extends Activity {
                 }
                 break;
             }
-            case R.id.id_opengl: {
-                Intent intent = new Intent(this, OpenGLActivity.class);
-                startActivity(intent);
-                break;
-            }
-            case R.id.id_socket: {
-                Intent intent = new Intent(this, ChatClientActivity.class);
-                startActivity(intent);
-                break;
-            }
-            case R.id.id_property_anim: {
-                Intent intent = new Intent(this, AnimationActivity2.class);
-                startActivity(intent);
-                break;
-            }
-            case R.id.id_event_activity: {
-//                Intent intent = new Intent(this, EventTestActivity.class);
+//            case R.id.id_opengl: {
+//                Intent intent = new Intent(this, OpenGLActivity.class);
 //                startActivity(intent);
-                Intent intent = new Intent(this, BitmapActivity.class);
-                startActivity(intent);
-                break;
-            }
-            case R.id.id_media_player: {
-                Intent intent = new Intent(this, MediaPlayerActivity.class);
+//                break;
+//            }
+//            case R.id.id_socket: {
+//                Intent intent = new Intent(this, ChatClientActivity.class);
+//                startActivity(intent);
+//                break;
+//            }
+//            case R.id.id_property_anim: {
+//                Intent intent = new Intent(this, AnimationActivity2.class);
+//                startActivity(intent);
+//                break;
+//            }
+//            case R.id.id_event_activity: {
+//                Intent intent = new Intent(this, BitmapActivity.class);
+//                startActivity(intent);
+//                break;
+//            }
+//            case R.id.id_media_player: {
+//                Intent intent = new Intent(this, MediaPlayerActivity.class);
+//                startActivity(intent);
+//            }
+            case R.id.id_photoViewer: {
+                Intent intent = new Intent(this, PhotoViewer.class);
                 startActivity(intent);
             }
             default:
