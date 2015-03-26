@@ -1,6 +1,7 @@
 package com.example.hbjia.level2;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -76,6 +77,9 @@ public class MainActivity extends Activity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ActivityManager manager = (ActivityManager) this.getSystemService(Context.ACTIVITY_SERVICE);
+        Log.i(this.getClass().getName(), manager.getLargeMemoryClass()+"");
 
 //        new Thread(new Runnable() {
 //            @Override
