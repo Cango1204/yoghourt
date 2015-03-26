@@ -40,6 +40,7 @@ import com.example.hbjia.level2.event.EventTestActivity;
 import com.example.hbjia.level2.handler.HandlerThread;
 import com.example.hbjia.level2.handler.SubThread;
 import com.example.hbjia.level2.imageviewer.ImageViewActivity;
+import com.example.hbjia.level2.media.MediaPlayerActivity;
 import com.example.hbjia.level2.memory.BitmapActivity;
 import com.example.hbjia.level2.opengl.OpenGLActivity;
 import com.example.hbjia.level2.receiver.FirstReceiver;
@@ -305,6 +306,10 @@ public class MainActivity extends Activity {
                 Intent intent = new Intent(this, BitmapActivity.class);
                 startActivity(intent);
                 break;
+            }
+            case R.id.id_media_player: {
+                Intent intent = new Intent(this, MediaPlayerActivity.class);
+                startActivity(intent);
             }
             default:
                 break;

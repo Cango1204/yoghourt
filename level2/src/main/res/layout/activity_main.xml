@@ -149,6 +149,13 @@
                 android:text="Event Test"
                 android:onClick="onClick"/>
 
+            <Button
+                android:id="@+id/id_media_player"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Media Player"
+                android:onClick="onClick"/>
+
         </LinearLayout>
     </ScrollView>
 
